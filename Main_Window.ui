@@ -146,19 +146,6 @@
      <string>자동으로 바뀝니다</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>360</y>
-      <width>161</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>당일 거래량 테스트</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -210,7 +197,7 @@
    <sender>Increase_Volumne</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>Today_Traiding_Button_In_Main()</slot>
+   <slot>Increase_Volume_Button_In_Main()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>670</x>
@@ -219,22 +206,6 @@
     <hint type="destinationlabel">
      <x>538</x>
      <y>566</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>Test()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>431</x>
-     <y>443</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>550</x>
-     <y>443</y>
     </hint>
    </hints>
   </connection>

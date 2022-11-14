@@ -57,8 +57,8 @@ class kiwoonMain:
         self.kiwoom.output_list = output_list['OPT10023']
 
         self.kiwoom.SetInputValue("시장구분", "0")
-        self.kiwoom.SetInputValue("정렬구분"	,  "1");
-        self.kiwoom.SetInputValue("시간구분"	,  "2");
+        self.kiwoom.SetInputValue("정렬구분"	,  "1")
+        self.kiwoom.SetInputValue("시간구분"	,  "2")
         self.kiwoom.CommRqData("OPT10023", "OPT10023", 0, "0103")
 
         return self.kiwoom.ret_data['OPT10023']   
@@ -71,6 +71,16 @@ class kiwoonMain:
         self.kiwoom.CommRqData("OPT10070", "OPT10070", 0, "0104")
 
         return self.kiwoom.ret_data['OPT10070'] 
+    
+    def OPT10019(self):
+        output_list={'OPT10019':['종목명','현재가','전일대비','등락률','거래량','거래금액'],}
+        self.kiwoom.output_list = output_list['OPT10019']
+        self.kiwoom.SetInputValue("시장구분","0")
+        self.kiwoom.SetInputValue("등락구분", "1")
+        self.kiwoom.SetInputValue("시간구분", "2")
+        self.kiwoom.CommRqData("OPT10019", "OPT10019", 0, "0101")
+
+        return self.kiwoom.ret_data['OPT10019']
     
 # app = QApplication(sys.argv)
 # api_con = kiwoonMain()

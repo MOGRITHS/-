@@ -39,9 +39,8 @@ class Main_WindowClass(QMainWindow, form_main_class) :
         self.show()
         
     def Test(self):
-        result=api_con.OPT10030()
+        result=api_con.OPT10019()
         print(result['Data'][0])
-        print(result['Data'][0].get('종목명'))
         
     def Get_login_info(self):
         print(api_con.Set_User_Name())
@@ -142,6 +141,27 @@ class Today_Increase_Volume_Class(QDialog,QWidget,Increase_Volume_class):
     
     def Back_To_Main_Window_Button_In_Today_Increase_Volume(self):
         self.hide()
+        
+    def Fill_Data(self):
+        result=api_con.OPT10019()
+        self.Today_Table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+        for i in range(10):
+            self.Today_Table.setItem(i,0,QTableWidgetItem(str(result['Data'][i].get("종목명"))))
+            
+        for i in range(10):
+            self.Today_Table.setItem(i,1,QTableWidgetItem(str(result['Data'][i].get("현재가"))))
+            
+        for i in range(10):
+            self.Today_Table.setItem(i,2,QTableWidgetItem(str(result['Data'][i].get("전일대비"))))
+
+        for i in range(10):
+            self.Today_Table.setItem(i,3,QTableWidgetItem(str(result['Data'][i].get("등락률"))))
+
+        for i in range(10):
+            self.Today_Table.setItem(i,4,QTableWidgetItem(str(result['Data'][i].get("거래량"))))
+
+        for i in range(10):
+            self.Today_Table.setItem(i,5,QTableWidgetItem(str(result['Data'][i].get("거래금액"))))
 #----------------------거래량 급증 UI <END>----------------------  
     
 
